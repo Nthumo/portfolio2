@@ -1,56 +1,54 @@
+{% extends 'portfolio/base.html'%}
 {% load static %}
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>My skills</title>
-        
-        <link rel="stylesheet" href="{% static 'css/dist/styles.css' %}">
+{% block title %}Skills{% endblock %}
 
-        <style>
-            .custom-header {
-                display: inline-block;
-                width: max-content;
-            }
-        </style>
-    </head>
-    <body class="bg-zinc-900 p-4 overflow-auto">
+{% block head%}
+   <style>
+        .custom-header {
+            display: inline-block;
+            width: max-content;
+        }
+        .project-item {
+            cursor: pointer;
+        }
+        .project-details {
+            position: relative;
+            overflow: hidden;
+            display: none;
+        }
+        .project-details.active {
+            display: block;
+        }
+        .project-details:hover .overlay {
+            opacity: 1;
+        }
+        .project-details:hover .blur-effect {
+            filter: blur(4px);
+            transform: scale(1.05);
+        }
+        .blur-effect {
+            transition: all 0.3s ease;
+        }
 
-        <!--main container-->
-        <div class="grid md:grid-cols-2 gap-4">
+    </style>
+{% endblock %}
 
-            <!--programming languages-->
-            <div class="bg-zinc-800 min-h-[100px] text-white text-center rounded-lg">
-                <h1>
-                    <span class="underline-offset-8 decoration-double decoration-sky-400 underline text-white"> PROGRAMMING LANGUAGES</span>
-                    <ul class="grid gap-2 pt-4 p-4 ">
-                        <li class="flex gap-4 items-center  block p-2 bg-black hover:border rounded-lg">
-                            <img src="{% static 'images/python' %}" width="30" alt="python">
-                            Python</li>
-                        <li class="flex gap-4 items-center block p-2 bg-black hover:border rounded-lg">
-                            <img src="{% static 'images/js' %}" width="30" alt="JavaScript" class="rounded-lg">
-                            JavaScript</li>
-                        <li class="flex gap-4 items-center block p-2 bg-black hover:border rounded-lg">
-                            <img src="{%static 'images/c'%}" width="30" alt="C">
-                            C/C++</li>
-                        <li class="flex gap-4 items-center block p-2 bg-black hover:border rounded-lg">
-                            <img src="{%static 'images/html5'%}" width="30" alt="HTML">
-                            HTML</li>
-                            
-                        <li class="flex gap-4 items-center block p-2 bg-black hover:border rounded-lg">
-                            <img src="{%static 'images/css3'%}" width="30" alt="HTML">
-                            CSS
-                        </li>
-                        
-                        <li class="flex gap-4 items-center block p-2 bg-black hover:border rounded-lg">
-                            <img src="{%static 'images/sql'%}" width="50" alt="">
-                            SQL</li>
-                    </ul>
-                    
-                </h1>
+{% block content %}
+<div class="bg-zinc-900 p-4 overflow-auto">
+    <div class="mb-12">
+        <h1 class="text-white font-bold text-4xl italic underline">Projects</h1>
+    </div>
 
+    <!--Projects names-->
+    <div class="md:flex grid place-items-center md:items-center space-x-8 md:justify-center">
+        <div class=" space-y-4 md:w-[300px] max-w-lg">
+            <div id="project-1" class="md:absolute top-28 bg-zinc-800 p-4 w-[220px] left-[100px] rounded-xl hover:bg-black border project-item active">
+                <h1 class="text-white">Restaurant Application</h1>
             </div>
+            <div id="project-2" class="md:absolute top-44 bg-zinc-800 p-4 w-[220px] left-[100px] rounded-xl hover:bg-black border project-item">
+                <h1 class="text-white">Plumbing Reservation System</h1>
+            </div>
+<<<<<<< HEAD
 
             <!--frameworks and libraries-->
             <div class="bg-zinc-800 min-h-[100px] text-white text-center rounded-lg">
@@ -144,7 +142,199 @@
                     
                 </h1>
              </div>
+=======
+>>>>>>> 3276faa (add projects)
         </div>
-    </body>
+    
+        <!--Project details-->
+        <div class="container mx-auto md:w-[800px] w-[450px] md:h-[500px] md:mt-0 mt-8 rounded-xl bg-white p-4">
+            <div id="details-project-1" class="project-details blur-effect active">
+                <img src="{% static 'images/resto.png' %}" alt="Restaurant Application" class="mt- rounded-lg">
+                <div class=" mt-12 left-20">
+                    <div class="flex flex-col gap-2">
+                        <div class="bg-gray-400 md:p-1 rounded-xl text-gray-800 w-[100px] border-gray-900">
+                            <h1>Django</h1>
+                        </div>
+                        <div class="bg-gray-400 md:p-1 rounded-xl text-gray-800 w-[100px] border-black">
+                            <h1>React</h1> 
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute right-[120px] md:right-[350px] bottom-2">
+                    <a href="https://restaurantapp-l2q9ftapd-nthumos-projects.vercel.app/" target="_blank">
+                        <div class="bg-zinc-900  w-auto hover:cursor text-white hover:text-black p-2 flex gap-x-2 rounded-xl hover:bg-gray-200 hover:border border-black">
+                            <img src="{%static 'images/right.png'%}" width="20" alt="arrow">
+                            <h1>Website</h1>
+                        </div>
+                    </a>
+                </div>
+                <div class="absolute right-[10px] md:right-[250px] bottom-[5px] md:bottom-2">
+                    <a href="https://github.com/Nthumo/restaurant-fullstack-app" target="_blank">
+                        <div class="bg-zinc-900  w-auto hover:cursor text-white hover:text-black p-2 flex gap-x-2 rounded-xl hover:bg-gray-200 hover:border border-black">
+                            <img src="{%static 'images/github'%}" width="20" alt="github">
+                            <h1>GitHub</h1>
+                        </div>
+                    </a> 
+                </div>
+            </div>
+            <div id="details-project-2" class="project-details bg-gray-200 p-4 rounded-xl">
+                <h1 class="font-bold">I'm currently working on this project. The project will be available soon.</h1>
+                <span>Thank you for your interest on this Project.</span>
+            </div>
+        </div>
+    </div>
 
-</html>
+    <div class="mt-[50px]">
+        <h1 class="text-4xl text-white font-bold italic underline">Skills</h1>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-4 mt-[50px]">
+        <!--programming languages-->
+        <div class="bg-zinc-800 min-h-[100px] text-white text-center rounded-lg">
+            <h1>
+                <span class="underline-offset-8 decoration-double decoration-sky-400 underline text-white">LANGUAGES</span>
+                <ol class="grid gap-2 pt-4 p-4 ">
+                    <li class="flex gap-4 items-center block p-2 bg-black hover:border rounded-lg">
+                        <img src="{% static 'images/python' %}" width="30" alt="python">
+                        Python
+                    </li>
+                    <li class="flex gap-4 items-center block p-2 bg-black hover:border rounded-lg">
+                        <img src="{% static 'images/js' %}" width="30" alt="JavaScript" class="rounded-lg">
+                        JavaScript
+                    </li>
+                    <li class="flex gap-4 items-center block p-2 bg-black hover:border rounded-lg">
+                        <img src="{%static 'images/c'%}" width="30" alt="C">
+                        C/C++
+                    </li>
+                    <li class="flex gap-4 items-center block p-2 bg-black hover:border rounded-lg">
+                        <img src="{%static 'images/html5'%}" width="30" alt="HTML">
+                        HTML
+                    </li>
+                        
+                    <li class="flex gap-4 items-center block p-2 bg-black hover:border rounded-lg">
+                        <img src="{%static 'images/css3'%}" width="30" alt="HTML">
+                        CSS
+                    </li>
+                    
+                    <li class="flex gap-4 items-center block p-2 bg-black hover:border rounded-lg">
+                        <img src="{%static 'images/sql'%}" width="50" alt="">
+                        SQL
+                    </li>
+                </ol>
+                
+            </h1>
+
+        </div>
+
+        <!--frameworks and libraries-->
+        <div class="bg-zinc-800 min-h-[100px] text-white text-center rounded-lg">
+            <h1>
+                <span class="underline-offset-8 decoration-double decoration-sky-400 underline text-white">FRAMEWORKS AND LIBRARIES</span>
+                <ol class="grid gap-2 pt-4 p-4">
+                    <li class="flex gap-4 items-center block p-2 bg-black hover:border rounded-lg">
+                        <img src="{%static 'images/django'%}" width="30" alt="django" class="rounded-lg">
+                        Django
+                    </li>
+                    <li class="flex gap-4 items-center block p-2 bg-black hover:border rounded-lg">
+                        <img src="{%static 'images/react.png'%}" width="30" alt="react" class="rounded-lg">
+                        React
+                    </li>
+                    <li class="flex gap-4 items-center block p-2 bg-black hover:border rounded-lg">
+                        <img src="{%static 'images/tailwind'%}" width="30" alt="tailwindcss">
+                        Tailwind CSS
+                    </li>
+                </ol>
+            </h1>
+        </div>
+
+        <!--databases-->
+        <div class="bg-zinc-800 min-h-[100px] text-white text-center rounded-lg">
+            <h1>
+                <span class="text-white underline decoration-double decoration-sky-400 underline-offset-8">DATABASES</span>
+                <ol class="grid gap-2 pt-4 p-4">
+                    <li class="flex gap-4 items-center block p-2 bg-black hover:border rounded-lg">
+                        <img src="{%static 'images/postgresql'%}" width="30" alt="PostreSQL">
+                        PostreSQL
+                    </li>
+                    <li class="flex gap-4 items-center block p-2 bg-black hover:border rounded-lg">
+                        <img src="{%static 'images/sqlite'%}" width="30" alt="SQLite">
+                        SQLite
+                    </li>
+                    <li class="flex gap-4 items-center block p-2 bg-black hover:border rounded-lg">
+                        <img src="{%static 'images/mongodb'%}" width="15" alt="MongoDB">
+                        MongoDB
+                    </li>
+                </ol>
+                
+            </h1>
+        </div>
+
+        <!--apis and web services-->
+        <div class="bg-zinc-800 min-h-[100px] text-white text-center rounded-lg">
+            <h1>
+                <span class="text-white underline underline-offset-8 decoration-double decoration-sky-400">APIs AND WEB SERVICES</span>
+                <ol class="grid gap-2 pt-4 p-4">
+                    <li class="flex gap-4 items-center block p-2 bg-black hover:border rounded-lg">Django REST framework</li>
+                    <li class="flex gap-4 items-center block p-2 bg-black hover:border rounded-lg">
+                        <img src="{%static 'images/graphql'%}" width="30" alt="graphql">
+                        GraphQl
+                    </li>
+                </ol>
+            </h1>
+        </div>
+
+        <!--version control and collaboration-->
+        <div class="bg-zinc-800 min-h-[100px] h-40 text-white text-center rounded-lg">
+            <h1>
+                <span class="underline underline-offset-8 decoration-double decoration-sky-400">VERSION CONTROL AND COLLABORATION</span>
+                <ol class="grid gap-2 pt-4 p-4">
+                    <li class="flex gap-4 items-center block p-2 bg-zinc-900 hover:border rounded-lg">
+                        <img src="{%static 'images/git'%}" width="30" alt="Git" class="rounded-lg">
+                        Git
+                    </li>
+                    <li class="flex gap-4 items-center block p-2 bg-zinc-900 hover:border rounded-lg">
+                        <img src="{%static 'images/github'%}" width="30" alt="">
+                        GitHub
+                    </li>
+                </ol>
+            </h1>
+        </div>
+
+        <!--development tools-->
+        <div class="bg-zinc-800 min-h-[100px] text-white text-center rounded-lg">
+            <h1 class="">
+                <span class="underline underline-offset-8 decoration-double decoration-sky-400">DEVELOPMENT TECHNOLOGIES</span>
+                <ol class="grid gap-2 pt-4 p-4">
+                    <li class="flex gap-4 items-center block p-2 bg-black hover:border rounded-lg">
+                        <img src="{%static 'images/docker'%}" width="30" alt="Docker">
+                        Docker
+                    </li>
+                    <li class="flex gap-4 items-center block p-2 bg-black hover:border rounded-lg">
+                        <img src="{%static 'images/kubernetes'%}" width="30" alt="Kubernetes">
+                        Kubernetes
+                    </li>
+                </ol>
+            </h1>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        const projectItems = document.querySelectorAll('.project-item');
+        const projectDetails = document.querySelectorAll('.project-details');
+
+        projectItems.forEach(item => {
+            item.addEventListener('click', function() {
+                //Remove active class form all projects items and details
+                projectItems.forEach(i => i.classList.remove('active'));
+                projectDetails.forEach(d => d.classList.remove('active'));
+
+                // Add active class to the clicked projects and the corresponding details
+                this.classList.add('active');
+                document.querySelector('#details-' + this.id).classList.add('active');
+            });
+        });
+    });
+</script>
+{% endblock %}
