@@ -1,13 +1,7 @@
+{% extends 'portfolio/base.html'%}
+{% block title %}Nthumo{% endblock %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nthumo Mutinda Portfolio</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/dist/styles.css' %}">
-    <link rel="stylesheet" href="{% static 'css/dist/anime.css' %}">
+{% block head %}
     <style>
         .group:hover .hover-text-white {
             color: rgb(31, 10, 224)
@@ -21,78 +15,60 @@
          font-weight: 400;
          font-style: normal;
         }
-
-
-
     </style>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playwrite+FR+Moderne:wght@100..400&display=swap" rel="stylesheet">
+{% endblock %}
 
-</head>
-<body class="bg-black  overflow-hidden text-center">
-
-    <!-- main container-->
+{% block content %}
+<div class="overflow-hidden">
     <div class="flex flex-col p-4 h-svh">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 h-full w-full">
-
-                <!-- intro section-->
-                <div class="p-4 sm:p-6 md:p-8 lg:10 xl:12 flex flex-col justify-center items-center sm:min-h-[150px] min-h-[100px] md:min-h-[200px] gap-4">
-                    <p class="block text-gray-300 text-lg md:text-2xl lg:text-3xl">HI THERE! I'M</p>
-                    <h1 class="block text-2xl md:text-4xl lg:5xl font-serif font-extrabold text-center text-sky-400">NTHUMO MUTINDA</h1>
-
-        <div class="wrapper">
-            <h1 class="overflow-hidden text-wrap block font-mono font-extrabold text-md md:text-lg lg:text-xl text-center pt-2">
-                    
-                    <span class="word block text-white">SOFTWARE DEVELOPER</span>
-                    <span class="word block text-white opacity-25 line-through decoration-red-600">ANIMATOR</span>
-                    <span class="word block text-white">SOFTWARE DEVELOPER</span>
-                    <span class="word block text-white">GRAPHIC DESIGNER</span>
-                    <span class="word block text-white opacity-25 line-through decoration-red-600">VIDEO EDITOR</span>
-            </h1>
-        </div>
-
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 h-full w-full">
+            <!-- intro section-->
+            <div class="p-4 sm:p-6 md:p-8 lg:10 xl:12 flex flex-col justify-center items-center sm:min-h-[150px] min-h-[100px] md:min-h-[200px] gap-4">
+                <p class="block text-gray-300 text-lg md:text-2xl lg:text-3xl">HI THERE! I'M</p>
+                <h1 class="block text-2xl md:text-4xl lg:5xl font-serif font-extrabold text-center text-sky-400">NTHUMO MUTINDA</h1>
+                <div class="wrapper">
+                    <h1 class="overflow-hidden text-wrap block font-mono font-extrabold text-md md:text-lg lg:text-xl text-center pt-2">
+                        <span class="word block text-white">SOFTWARE DEVELOPER</span>
+                        <span class="word block text-white opacity-25 line-through decoration-red-600">ANIMATOR</span>
+                        <span class="word block text-white">SOFTWARE DEVELOPER</span>
+                        <span class="word block text-white">GRAPHIC DESIGNER</span>
+                        <span class="word block text-white opacity-25 line-through decoration-red-600">VIDEO EDITOR</span>
+                    </h1>
                 </div>
+            </div>
 
-                <!--about section-->
-                <a href="{% url 'portfolio:about'%}" class="md:l-10 rounded bg-zinc-900 p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 flex items-center justify-center sm:min-h-[80px] min-h-[100px] md:min-h-[200px] group transform transition-all cursor-pointer hover:scale-95">
-                    <div class="">
-                        <h2 class="text-2xl md:text-4xl font-extrabold text-center text-white">
-                            <span class="hover-text-white">ABOUT</span>
-                            <span class="hover-text-black text-blue-800">ME</span>
-                        </h2>
-                    </div>
-                </a>
+            <!--about section-->
+            <a href="{% url 'portfolio:about'%}" class="md:l-10 rounded bg-zinc-900 p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 flex items-center justify-center sm:min-h-[80px] min-h-[100px] md:min-h-[200px] group transform transition-all cursor-pointer hover:scale-95">
+                <div class="">
+                    <h2 class="text-2xl md:text-4xl font-extrabold text-center text-white">
+                        <span class="hover-text-white">ABOUT</span>
+                        <span class="hover-text-black text-blue-800">ME</span>
+                    </h2>
+                </div>
+            </a>
 
-
-                <!-- my skills section-->
-                <a href="{% url 'portfolio:skills'%}" class="rounded bg-zinc-900 p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 flex items-center justify-center sm:min-h-[80px] min-h-[100px] md:min-h-[200px] group transition-all transform cursor-pointer hover:scale-95">
-                    <div  class="" >
-                        <h2 class="text-2xl md:text-4xl font-extrabold text-center text-white">
-                            <span class="hover-text-white">MY</span>
-                            <span class="text-blue-800 hover-text-black">SKILLS</span>
-                        </h2>
-                    </div>
-
-                </a>
+            <!-- my skills section-->
+            <a href="{% url 'portfolio:skills'%}" class="rounded bg-zinc-900 p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 flex items-center justify-center sm:min-h-[80px] min-h-[100px] md:min-h-[200px] group transition-all transform cursor-pointer hover:scale-95">
+                <div  class="" >
+                    <h2 class="text-2xl md:text-4xl font-extrabold text-center text-white">
+                        <span class="hover-text-white">MY</span>
+                        <span class="text-blue-800 hover-text-black">SKILLS</span>
+                    </h2>
+                    <h2 class="text-2xl font-bold text-white">(Projects)</h2>
+                </div>
+            </a>
              
 
-                <!-- get in touch section-->
-                <a href="{% url 'portfolio:contact' %}" class="rounded bg-zinc-900 p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 flex items-center justify-center sm:min-h-[80px] min-h-[100px] md:min-h-[200px] group transition-all cursor-pointer hover:scale-95 transform">
-                    <div class="">
-                        <h2 class="text-2xl md:text-4xl font-extrabold text-center text-white">
-                            <span class="hover-text-white">GET</span>
-                            <span class="text-blue-800 hover-text-black">IN TOUCH</span>
-                        </h2>
-                    </div>
-                </a>
-            
-
+            <!-- get in touch section-->
+            <a href="{% url 'portfolio:contact' %}" class="rounded bg-zinc-900 p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 flex items-center justify-center sm:min-h-[80px] min-h-[100px] md:min-h-[200px] group transition-all cursor-pointer hover:scale-95 transform">
+                <div class="">
+                    <h2 class="text-2xl md:text-4xl font-extrabold text-center text-white">
+                        <span class="hover-text-white">GET</span>
+                        <span class="text-blue-800 hover-text-black">IN TOUCH</span>
+                    </h2>
+                </div>
+            </a>
         </div>
     </div>
-
-    <script>
-        // JavaScript for additional interactivity can be added here if needed
-    </script>
-</body>
-</html>
+</div>
+{% endblock %}
